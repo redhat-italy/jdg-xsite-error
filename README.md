@@ -1,10 +1,10 @@
-1) Download from the redhat site the datagrid server distribution. Link: https://access.redhat.com/jbossnetwork/restricted/softwareDownload.html?softwareId=36413
-2) Copy the zip file inside the installation directory
-3) Run ./build-jdg
-4) Run ./build-node-1
-5) Run ./build-node-2
-6) Run ./build-dr
-7) Run ./build-client
+1. Download from the redhat site the datagrid server distribution. Link: https://access.redhat.com/jbossnetwork/restricted/softwareDownload.html?softwareId=36413
+2. Copy the zip file inside the installation directory
+3. Run ./build-jdg
+4. Run ./build-node-1
+5. Run ./build-node-2
+6. Run ./build-dr
+7. Run ./build-client
 
 Check that you have the following images
 ```
@@ -17,13 +17,12 @@ running the docker command:
 ```
 docker images
 ```
-
 Now that the docker images are properly created:
-1) Run ./run-node-1
-2) Run ./run-node-2
-3) Run ./run-dr
-4) Run ./run-client
-5) From the client container copy the /etc/hosts entries for the three containers node-1, node2 and dr into the /etc/hosts for node-1 and node-2; the /etc/hosts should be something like:
+8. Run ./run-node-1
+9. Run ./run-node-2
+10. Run ./run-dr
+11. Run ./run-client
+12. From the client container copy the /etc/hosts entries for the three containers node-1, node2 and dr into the /etc/hosts for node-1 and node-2; the /etc/hosts should be something like:
 ```
 172.17.0.56	client
 127.0.0.1	localhost
@@ -37,11 +36,11 @@ ff02::2	ip6-allrouters
 172.17.0.52	node-1 node-1
 172.17.0.53	node-2 node-2
 ```
-5) Now you're ready to start JDG; on each container run the sh file inside the /opt directory
-6) Check that the JDG servers are starting properly, you should see a PRIMARY cluster with 2 members a DR cluster with 1 member and one node from PRIMARY and DR connected to the global cluster.
-7) Go back to the client container and run ./GO.sh (no output and REMEMBER newlines will shutdown the application, so don't bother to press the enter key :D )
-8) Access to DR container with command:
+13. Now you're ready to start JDG; on each container run the sh file inside the /opt directory
+14. Check that the JDG servers are starting properly, you should see a PRIMARY cluster with 2 members a DR cluster with 1 member and one node from PRIMARY and DR connected to the global cluster.
+15. Go back to the client container and run ./GO.sh (no output and REMEMBER newlines will shutdown the application, so don't bother to press the enter key :D )
+16. Access to DR container with command:
 ```
 docker exec -it <CONTAINER ID> bash
 ```
-9) After few seconds you should see exceptions on PRIMARY master node, the one connected to the global cluster, and warning on the other one
+17. After few seconds you should see exceptions on PRIMARY master node, the one connected to the global cluster, and warning on the other one
