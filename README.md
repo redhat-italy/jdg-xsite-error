@@ -37,4 +37,7 @@ ff02::2	ip6-allrouters
 ```
 docker exec -it <CONTAINER ID> bash
 ```
+
+- kill the jdg process on the dr
+
 - After few seconds you should see exceptions on PRIMARY master node, the one connected to the global cluster, and warning on the other one
