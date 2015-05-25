@@ -1,0 +1,1 @@
+docker run -it -P --hostname="client" --link node-1:node-1 --link node-2:node-2 --link dr:dr --rm jdg-6.4.1-client /bin/bash

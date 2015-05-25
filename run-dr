@@ -1,0 +1,1 @@
+docker run -it -P --hostname="dr" --name dr --link node-1:node-1 --link node-2:node-2 --rm jdg-6.4.1-dr /bin/bash

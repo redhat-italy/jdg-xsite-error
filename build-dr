@@ -1,0 +1,1 @@
+docker build -f dr.dockerfile -t jdg-6.4.1-dr .
